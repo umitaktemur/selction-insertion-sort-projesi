@@ -1,0 +1,59 @@
+SELECTİON SORT PROJESİ
+
+Tüm dizin taranır. En küçük rakam bulunur. => [7,3,5,8,2,9,4,15,6]
+
+Bulunan en küçük rakam (2) ile baştaki rakam yer değiştirir. => [2,3,5,8,7,9,4,15,6]
+
+(2) rakamı dışında kalan diğer rakamlara bakılır ve en küçük sayı bulunur (3). En solda olduğu için yer değişikliği olmaz. => [2,3,5,8,7,9,4,15,6]
+
+(2.3) rakamları dışında kalan diğer rakamlara bakılır ve en küçük sayı bulunur (4). 4 ile 5 yer değiştirir. => [2,3,4,8,7,9,5,15,6]
+
+(2.3,4) rakamları dışında kalan diğer rakamlara bakılır ve en küçük sayı bulunur (5). 5 ile 8 yer değiştirir. => [2,3,4,5,7,9,8,15,6]
+
+(2.3,4,5) rakamları dışında kalan diğer rakamlara bakılır ve en küçük sayı bulunur (5). 6 ile 7 yer değiştirir. => [2,3,4,5,6,9,8,15,7]
+
+(2.3,4,5,6) rakamları dışında kalan diğer rakamlara bakılır ve en küçük sayı bulunur (7). 7 ile 9 yer değiştirir. => [2,3,4,5,6,7,8,15,9]
+
+(2.3,4,5,6,7) rakamları dışında kalan diğer rakamlara bakılır ve en küçük sayı bulunur (8). En solda olduğu için yer değişikliği olmaz. => [2,3,4,5,6,7,8,15,9]
+
+(2.3,4,5,6,7,8) rakamları dışında kalan diğer rakamlara bakılır ve en küçük sayı bulunur (9). 9 ile 15 yer değiştirir. => [2,3,4,5,6,7,8,9,15]
+
+(2.3,4,5,6,7,8,9) rakamları dışında kalan diğer rakamlara bakılır ve en küçük sayı bulunur (15). Son rakam 15 olduğu için yer değişikliği olmaz sıralama tamamlanır  => [2,3,4,5,6,7,8,9,15]
+
+***** (n)+(n-1)+(n-2)+(n-3),....1 => olduğu için Worst Case Big O(n^2) dir.*****
+
+
+
+INSERTION SORT
+
+Sıralama ilk rakamdan babaşlar. => [22,|27,16,2,18,6]
+
+
+Yanındaki ikinci rakamı da (27) sıralamaya dahil eder. => [22,27,|16,2,18,6] 
+22 sayısı 27 den büyük olduğu için değişiklik olmaz. => [22,27,|16,2,18,6]
+
+
+Yanındaki ücüncü rakamı da (16) sıralamaya dahil eder. => [22,27,16,|2,18,6] 
+16 sayısı 27 den küçük olduğu için 27 nin soluna gelir. => [22,16,27,|2,18,6]
+16 sayısı 22 den küçük olduğu için 22 nin soluna gelir. => [16,22,27,|2,18,6]
+
+
+Yanındaki dördüncü rakamı da (2) sıralamaya dahil eder. => [16,22,27,2,|18,6] 
+2 sayısı 27, dan küçük olduğu için 27 nın soluna gelir. => [16,22,2,27,|18,6]
+2 sayısı 22, den küçük olduğu için 22 nın soluna gelir. => [16,2,22,27,|18,6]
+2 sayısı 16, dan küçük olduğu için 16 nın soluna gelir ve solunda rakam olmadığı için en solda kalır. => [2,16,22,27,|18,6]
+
+
+Yanındaki beşinci rakamı da (18) sıralamaya dahil eder. => [2,16,22,27,18,|6]
+18 sayısı 27,den küçük olduğu için 27 nin soluna gelir. => [2,16,22,18,27,|6]
+18 sayısı 22,den küçük olduğu için 22 nin soluna gelir. => [2,16,18,22,27,|6]
+
+
+Yanındaki altıncı rakamı da (6) sıralamaya dahil eder. => [2,16,18,22,27,6|]
+6 sayısı 27 dan küçük olduğu için 26 nin soluna gelir. => [2,16,18,22,6,27|]
+6 sayısı 22 dan küçük olduğu için 22 nin soluna gelir. => [2,16,18,6,22,27|]
+6 sayısı 18 dan küçük olduğu için 18 nin soluna gelir. => [2,16,6,18,22,27|]
+6 sayısı 16 dan küçük olduğu için 16 nin soluna gelir. => [2,6,16,18,22,27|]
+
+
+*****Worst Case => Big O(n^2), Best Case => Big O(n), 18 Sayısı avarage Case kapsamına girer
